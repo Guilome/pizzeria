@@ -54,6 +54,10 @@ public class Pizza {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+	//num
+	public static int getNum() {
+		return num;
+	}
 	
 	public String toString(){
 		String Affichage = "";

@@ -8,7 +8,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Pizza[] tableauPizza = new Pizza[8];
+		Pizza[] tableauPizza = new Pizza[100];
 		
 		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
 		tableauPizza[0] = p0;
@@ -33,12 +33,12 @@ public class Test {
 		int choixUtilisateur = 0;
 		
 		do{
-			String choixS = choix.nextLine();
+			String choixS = choix.next();
 			choixUtilisateur = Integer.parseInt(choixS);
 			switch(choixUtilisateur){
 				case 1 :
 					System.out.println("Liste des pizzas");
-					for(int i=0; i<tableauPizza.length; i++){
+					for(int i=0; i < Pizza.getNum(); i++){
 						System.out.println(tableauPizza[i]);	
 					}
 					System.out.println();
@@ -47,21 +47,48 @@ public class Test {
 				case 2 :					
 					System.out.println("Ajout d'une nouvelle Pizza");
 					System.out.println("Veuillez saisir le code :");
-					String codePizza = choixS;
+					String codePizza = choix.next();
 					System.out.println("Veuillez saisir le nom (sans espace) :");
-					String nomPizza = choixS;
+					String nomPizza = choix.next();
 					System.out.println("Veuillez saisir le prix :");
-					double prixPizza = Double.parseDouble(choixS);
+					double prixPizza = Double.parseDouble(choix.next());
 					//Creation d'une nouvelle pizza
-					Pizza nouvellePizza = new Pizza(codePizza, nomPizza, prixPizza);
+					tableauPizza[Pizza.getNum()] =  new Pizza(codePizza, nomPizza, prixPizza);
 					gestionMenu();
 				break;
 				case 3 :
 					System.out.println("Mise à jour d'une pizza");
+					System.out.println("Veuillez choisir le code de la pizza à modifier :");
+					String codePizzaModif = choix.next();
+					System.out.println("");
+					System.out.println("Veuillez saisir le nouveau code :");
+					String nouveauCode = choix.next();
+					System.out.println("Veuillez saisir le nouveau nom (sans espace) :");
+					String nouveauNom = choix.next();
+					System.out.println("Veuillez saisir le nouveau prix :");
+					double nouveauPrix = Double.parseDouble(choix.next());	
+					
+					for(int i = 0; i < Pizza.getNum(); i++){
+						if(tableauPizza[i].getCode().equals(codePizzaModif)){
+							tableauPizza[i].setCode(nouveauCode);	
+							tableauPizza[i].setLibelle(nouveauNom);	
+							tableauPizza[i].setPrix(nouveauPrix);							
+						}
+					}					
 					gestionMenu();
 				break;
 				case 4 :
 					System.out.println("Suppression d'une pizza");
+					System.out.println("Veuillez choisir le code de la pizza à supprimer :");
+					String codePizzaSup = choix.next();	
+					
+					for(int i = 0; i < Pizza.getNum(); i++){
+						if(tableauPizza[i].getCode().equals(codePizzaSup)){
+							tableauPizza[i].setCode("");	
+							tableauPizza[i].setLibelle("");	
+							tableauPizza[i].setPrix(0.00);		
+						}
+					}
 					gestionMenu();
 				break;
 				default:
