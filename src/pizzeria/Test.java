@@ -8,7 +8,7 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Pizza[] TableauPizza = new Pizza[100];
+		Pizza[] TableauPizza = new Pizza[8];
 		
 		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
 		TableauPizza[0] = p0;
