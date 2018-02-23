@@ -54,5 +54,11 @@ public class Pizza {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+	
+	public String afficherPizza(){
+		String Affichage = "";
+		Affichage = this.code +" -> "+ this.libelle +"("+this.prix+"€)"; 		
+		return Affichage;
+	}
 		
 }

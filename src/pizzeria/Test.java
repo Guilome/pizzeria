@@ -8,24 +8,24 @@ public class Test {
 
 	public static void main(String[] args) {
 		
-		Pizza[] TableauPizza = new Pizza[8];
+		Pizza[] tableauPizza = new Pizza[8];
 		
 		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
-		TableauPizza[0] = p0;
+		tableauPizza[0] = p0;
 		Pizza p1 = new Pizza("MAR", "Margherita", 14.00);
-		TableauPizza[1] = p1;
+		tableauPizza[1] = p1;
 		Pizza p2 = new Pizza("REIN", "La Reine", 11.50);
-		TableauPizza[2] = p2;
+		tableauPizza[2] = p2;
 		Pizza p3 = new Pizza("FRO", "La 4 fromages", 12.00);
-		TableauPizza[3] = p3;
+		tableauPizza[3] = p3;
 		Pizza p4 = new Pizza("CAN", "La cannibale", 12.50);
-		TableauPizza[4] = p4;
+		tableauPizza[4] = p4;
 		Pizza p5 = new Pizza("SAV", "La savoyarde", 13.00);
-		TableauPizza[5] = p5;
+		tableauPizza[5] = p5;
 		Pizza p6 = new Pizza("ORI", "L’orientale", 13.50);
-		TableauPizza[6] = p6;
+		tableauPizza[6] = p6;
 		Pizza p7 = new Pizza("IND", "L’indienne", 14.00);
-		TableauPizza[7] = p7;
+		tableauPizza[7] = p7;
 					
 		gestionMenu();
 		
@@ -33,14 +33,27 @@ public class Test {
 		int choixUtilisateur = 0;
 		
 		do{
-			choixUtilisateur = choix.nextInt();
+			String choixS = choix.nextLine();
+			choixUtilisateur = Integer.parseInt(choixS);
 			switch(choixUtilisateur){
 				case 1 :
 					System.out.println("Liste des pizzas");
+					for(int i=0; i<tableauPizza.length; i++){
+						System.out.println(tableauPizza[i].afficherPizza());	
+					}
+					System.out.println();
 					gestionMenu();
 				break;
-				case 2 :
+				case 2 :					
 					System.out.println("Ajout d'une nouvelle Pizza");
+					System.out.println("Veuillez saisir le code :");
+					String codePizza = choixS;
+					System.out.println("Veuillez saisir le nom (sans espace) :");
+					String nomPizza = choixS;
+					System.out.println("Veuillez saisir le prix :");
+					double prixPizza = Double.parseDouble(choixS);
+					//Creation d'une nouvelle pizza
+					Pizza nouvellePizza = new Pizza(codePizza, nomPizza, prixPizza);
 					gestionMenu();
 				break;
 				case 3 :
@@ -68,4 +81,6 @@ public class Test {
 		System.out.println("4. Supprimer une pizza");
 		System.out.println("99. Sortir");
 	}
+	
+
 }
