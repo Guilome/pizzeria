@@ -2,6 +2,7 @@ package model;
 
 public class Pizza {
 
+	static int num = 0;
 	//Attributes
 	int id;
 	String code;
@@ -19,33 +20,34 @@ public class Pizza {
 	
 	public Pizza(String code, String libelle, double prix) {
 		super();
+		this.id = num;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+
+		num ++;
 	}
 
 	// Getter Setter
+	//Id
 	public int getId() {
 		return id;
 	}
-	public void setId(int id) {
-		this.id = id;
-	}
-
+	//Code
 	public String getCode() {
 		return code;
 	}
 	public void setCode(String code) {
 		this.code = code;
 	}
-
+	//Libelle
 	public String getLibelle() {
 		return libelle;
 	}
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-
+	//Prix
 	public double getPrix() {
 		return prix;
 	}
