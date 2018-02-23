@@ -4,7 +4,7 @@ package pizzeria;
 import java.util.Scanner;
 import model.Pizza;
 
-public class Test {
+public class PizzeriaAdminConsoleApp {
 
 	public static void main(String[] args) {
 		
