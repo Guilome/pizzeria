@@ -55,10 +55,9 @@ public class Pizza {
 		this.prix = prix;
 	}
 	
-	public String afficherPizza(){
+	public String toString(){
 		String Affichage = "";
 		Affichage = this.code +" -> "+ this.libelle +"("+this.prix+"€)"; 		
 		return Affichage;
-	}
-		
+	}		
 }

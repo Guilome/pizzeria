@@ -39,7 +39,7 @@ public class Test {
 				case 1 :
 					System.out.println("Liste des pizzas");
 					for(int i=0; i<tableauPizza.length; i++){
-						System.out.println(tableauPizza[i].afficherPizza());	
+						System.out.println(tableauPizza[i]);	
 					}
 					System.out.println();
 					gestionMenu();
