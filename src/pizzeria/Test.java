@@ -39,7 +39,9 @@ public class Test {
 				case 1 :
 					System.out.println("Liste des pizzas");
 					for(int i=0; i < Pizza.getNum(); i++){
-						System.out.println(tableauPizza[i]);	
+						if(tableauPizza[i].getCode() != ""){
+							System.out.println(tableauPizza[i]);								
+						}
 					}
 					System.out.println();
 					gestionMenu();
