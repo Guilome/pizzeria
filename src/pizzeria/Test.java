@@ -9,7 +9,7 @@ public class Test {
 	public static void main(String[] args) {
 		
 		Pizza[] TableauPizza = new Pizza[8];
-		
+		//Remplissage du tableau
 		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
 		TableauPizza[0] = p0;
 		Pizza p1 = new Pizza("MAR", "Margherita", 14.00);
