@@ -1,35 +1,18 @@
 package pizzeria;
 
-import java.util.ArrayList;
-import java.util.List;
 //import
+import java.util.List;
 import java.util.Scanner;
 import model.Pizza;
+import model.PizzaMemDAO;
 
 public class PizzerieAdminConsoleApp2 {
 
 	public static void main(String[] args) {
 		
-		List<Pizza> mesPizzas = new ArrayList<>();
-		Pizza[] tableauPizza = new Pizza[100];
+		PizzaMemDAO dao = new PizzaMemDAO();		
+		List<Pizza> mesPizzas = dao.findAllPizzas();
 		
-		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
-		mesPizzas.add(p0);
-		Pizza p1 = new Pizza("MAR", "Margherita", 14.00);
-		mesPizzas.add(p1);
-		Pizza p2 = new Pizza("REIN", "La Reine", 11.50);
-		mesPizzas.add(p2);
-		Pizza p3 = new Pizza("FRO", "La 4 fromages", 12.00);
-		mesPizzas.add(p3);
-		Pizza p4 = new Pizza("CAN", "La cannibale", 12.50);
-		mesPizzas.add(p4);
-		Pizza p5 = new Pizza("SAV", "La savoyarde", 13.00);
-		mesPizzas.add(p5);
-		Pizza p6 = new Pizza("ORI", "L’orientale", 13.50);
-		mesPizzas.add(p6);
-		Pizza p7 = new Pizza("IND", "L’indienne", 14.00);
-		mesPizzas.add(p7);
-					
 		gestionMenu();
 		
 		Scanner choix = new Scanner(System.in);	
@@ -56,7 +39,7 @@ public class PizzerieAdminConsoleApp2 {
 					System.out.println("Veuillez saisir le prix :");
 					double prixPizza = Double.parseDouble(choix.next());
 					//Creation d'une nouvelle pizza
-					mesPizzas.add(new Pizza(codePizza, nomPizza, prixPizza));
+					dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza));
 					gestionMenu();
 				break;
 				case 3 :
@@ -71,27 +54,17 @@ public class PizzerieAdminConsoleApp2 {
 					System.out.println("Veuillez saisir le nouveau prix :");
 					double nouveauPrix = Double.parseDouble(choix.next());	
 					
-					for (Pizza pizza: mesPizzas) {
-						if(pizza.getCode().equals(codePizzaModif)){
-							pizza.setCode(nouveauCode);	
-							pizza.setLibelle(nouveauNom);	
-							pizza.setPrix(nouveauPrix);							
-						}
-					}				
+					dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix));
+					
 					gestionMenu();
 				break;
 				case 4 :
 					System.out.println("Suppression d'une pizza");
 					System.out.println("Veuillez choisir le code de la pizza à supprimer :");
 					String codePizzaSup = choix.next();	
-					int index = 0;
-					for (Pizza pizza: mesPizzas) {
-						if(pizza.getCode().equals(codePizzaSup)){
-							index = mesPizzas.indexOf(pizza);
-							mesPizzas.remove(index);
-							break;
-						}
-					}
+					
+					dao.deletePizza(codePizzaSup);
+					
 					gestionMenu();
 				break;
 				default:
