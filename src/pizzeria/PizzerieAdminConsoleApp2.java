@@ -1,62 +1,23 @@
 package pizzeria;
 
 //import
-import java.util.List;
 import java.util.Scanner;
-
-import model.AjouterPizzaService;
-import model.ListerPizzasService;
-import model.ModifierPizzaService;
-import model.Pizza;
-import model.PizzaMemDAO;
-import model.SupprimerPizzaService;
+import model.MenuServiceFactory;
 
 public class PizzerieAdminConsoleApp2 {
 
-	public static void main(String[] args) {
-		
-		PizzaMemDAO dao = new PizzaMemDAO();	
+	public static void main(String[] args) {		
+
 		Scanner choix = new Scanner(System.in);	
-		int choixUtilisateur = 0;
-		ListerPizzasService lPS = new ListerPizzasService();
-		AjouterPizzaService aPS = new AjouterPizzaService();
-		ModifierPizzaService mPS = new ModifierPizzaService();
-		SupprimerPizzaService sPS = new SupprimerPizzaService();
-		
+		int choixUtilisateur = 0;		
 		
 		gestionMenu();
 		
 		do{
 			String choixS = choix.nextLine();
 			choixUtilisateur = Integer.parseInt(choixS);
-			switch(choixUtilisateur){
-				case 1 :
-					System.out.println("Liste des pizzas");
-					System.out.println("");
-					lPS.executeUC(dao);					
-					gestionMenu();
-				break;
-				case 2 :					
-					System.out.println("Ajout d'une nouvelle Pizza");
-					System.out.println("");					
-					aPS.executeUC(dao);					
-					gestionMenu();
-				break;
-				case 3 :
-					System.out.println("Mise à jour d'une pizza");
-					System.out.println("");					
-					mPS.executeUC(dao);					
-					gestionMenu();
-				break;
-				case 4 :
-					System.out.println("Suppression d'une pizza");
-					System.out.println("");
-					sPS.executeUC(dao);					
-					gestionMenu();
-				break;
-				default:
-				break;
-			}			
+			MenuServiceFactory.Menu(choixUtilisateur);
+			
 		}while(choixUtilisateur != 99);		
 		
 		System.out.println("Au revoir.");	
