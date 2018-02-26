@@ -81,7 +81,7 @@ public class Pizza {
 	public void setPrix(CategoriePizza categorie) {
 		this.categorie = categorie;
 	}
-	//num
+	//num 
 	public static int getNum() {
 		return num;
 	}
