@@ -38,16 +38,14 @@ public class PizzaMemDAO implements IPizzaDAO{
 		pizzaModif.setLibelle(pizza.getLibelle());
 		pizzaModif.setPrix(pizza.getPrix());
 		int index = mesPizzas.indexOf(pizzaModif);
-		mesPizzas.set(index, pizzaModif);
-		
+		mesPizzas.set(index, pizzaModif);		
 	}
 
 	@Override
 	public void deletePizza(String codePizza) {
 		Pizza pizzaSup = findPizzaByCode(codePizza);
 		int index = mesPizzas.indexOf(pizzaSup);
-		mesPizzas.remove(index);
-		
+		mesPizzas.remove(index);		
 	}
 
 	@Override
