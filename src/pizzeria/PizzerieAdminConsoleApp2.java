@@ -3,6 +3,7 @@ package pizzeria;
 //import
 import java.util.Scanner;
 
+import exception.StockageException;
 import model.MenuService;
 import model.MenuServiceFactory;
 import model.PizzaMemDAO;
@@ -16,12 +17,16 @@ public class PizzerieAdminConsoleApp2 {
 		PizzaMemDAO dao = new PizzaMemDAO();	
 		
 		do{
-			gestionMenu();
+			gestionMenu();	
 			String choixS = choix.nextLine();
-			choixUtilisateur = Integer.parseInt(choixS);	
+			choixUtilisateur = Integer.parseInt(choixS);			
 			
-			MenuService mS = MenuServiceFactory.getInstance(choixUtilisateur);
-			mS.executeUC(dao);
+			try {
+				MenuService mS = MenuServiceFactory.getInstance(choixUtilisateur);
+				mS.executeUC(dao);
+			} catch (StockageException e) {
+				System.err.println(e.getMessage());
+			}
 			
 			
 		}while(choixUtilisateur != 99);		
