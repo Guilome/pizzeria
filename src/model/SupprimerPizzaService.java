@@ -15,10 +15,10 @@ public class SupprimerPizzaService extends MenuService{
 		
 		System.out.println("Suppression d'une pizza");
 		System.out.println("");
-		System.out.println("Veuillez choisir le code de la pizza à supprimer :");		
-		if(dao.pizzaExists(sc.nextLine())){	
+		System.out.println("Veuillez choisir le code de la pizza à supprimer :");	
+		codePizzaSup = sc.nextLine();	
+		if(dao.pizzaExists(codePizzaSup)){	
 			
-			codePizzaSup = sc.nextLine();
 			dao.deletePizza(codePizzaSup);	
 		}
 		else{

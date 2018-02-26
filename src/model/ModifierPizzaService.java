@@ -15,9 +15,9 @@ public class ModifierPizzaService extends MenuService{
 		System.out.println("Mise à jour d'une pizza");
 		System.out.println("");	
 		System.out.println("Veuillez choisir le code de la pizza à modifier :");
-		if(dao.pizzaExists(sc.nextLine())){
+		codePizzaModif = sc.nextLine();
+		if(dao.pizzaExists(codePizzaModif)){
 			
-			codePizzaModif = sc.nextLine();
 			System.out.println("Veuillez saisir le nouveau code :");
 			String nouveauCode = sc.nextLine();
 			System.out.println("Veuillez saisir le nouveau nom (sans espace) :");

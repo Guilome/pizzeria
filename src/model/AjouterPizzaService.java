@@ -13,20 +13,20 @@ public class AjouterPizzaService extends MenuService{
 		System.out.println("Ajout d'une nouvelle Pizza");
 		System.out.println("");	
 		System.out.println("Veuillez saisir le code :");
-		if(sc.nextLine().isEmpty() || sc.nextLine().equals(" ")){
+		String codePizza = sc.nextLine();
+		if(codePizza.isEmpty() || codePizza.equals(" ")){
 			throw new SavePizzaException("Le code est incorrect.");
 		}
-		String codePizza = sc.nextLine();
 		System.out.println("Veuillez saisir le nom (sans espace) :");
-		if(sc.nextLine().isEmpty()|| sc.nextLine().equals(" ")){
+		String nomPizza = sc.nextLine();
+		if(nomPizza.isEmpty()|| nomPizza.equals(" ")){
 			throw new SavePizzaException("Le libellé est incorrect.");
 		}
-		String nomPizza = sc.nextLine();
 		System.out.println("Veuillez saisir le prix :");
-		if(sc.nextLine().isEmpty()|| sc.nextLine().equals(" ")){
+		double prixPizza = Double.parseDouble(sc.nextLine());
+		if(prixPizza == 0) {
 			throw new SavePizzaException("Le prix est incorrect.");
 		}
-		double prixPizza = Double.parseDouble(sc.nextLine());
 		
 		//Creation d'une nouvelle pizza
 		dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza));
