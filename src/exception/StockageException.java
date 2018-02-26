@@ -1,13 +1,13 @@
 package exception;
 
 /**
- * @author ETY0004
+ * @author GOBERT Guillaume
  * Classe mère de gestion des exceptions
  */
 public class StockageException extends Exception{
 	
 	/**
-	 * Premier constructeur vide
+	 * Premier Constructeur
 	 */
 	public StockageException(){
 		

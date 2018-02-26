@@ -7,6 +7,10 @@ import model.ListerPizzasService;
 import model.SupprimerPizzaService;
 import model.ModifierPizzaService;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class MenuServiceFactory {
 
 	/** Retourne une instance d'une classe fille de MenuService

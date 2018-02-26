@@ -2,6 +2,10 @@ package model;
 
 import exception.StockageException;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public abstract class MenuService {
 
 	/** Execute l'action selectionné par l'utilisateur

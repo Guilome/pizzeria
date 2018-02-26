@@ -2,6 +2,10 @@ package model;
 
 import java.util.List;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class ListerPizzasService extends MenuService{
 
 	@Override

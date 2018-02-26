@@ -6,6 +6,10 @@ import java.util.List;
 
 import Interface.IPizzaDAO;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class PizzaMemDAO implements IPizzaDAO{
 
 	List<Pizza> mesPizzas = new ArrayList<>();

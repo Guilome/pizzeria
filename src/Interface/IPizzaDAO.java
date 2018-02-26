@@ -5,7 +5,7 @@ import java.util.List;
 import model.Pizza;
 
 /**
- * @author ETY0004
+ * @author GOBERT Guillaume
  *
  */
 public interface IPizzaDAO {

@@ -4,6 +4,10 @@ package model;
 import java.util.Scanner;
 import exception.SavePizzaException;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class AjouterPizzaService extends MenuService{
 
 	@Override

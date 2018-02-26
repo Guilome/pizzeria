@@ -1,5 +1,9 @@
 package exception;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class UpdatePizzaException extends StockageException{
 	
 	public UpdatePizzaException(){

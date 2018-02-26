@@ -1,5 +1,9 @@
 package model;
 
+/**
+ * @author GOBERT Guillaume
+ * Classe Pizza
+ */
 public class Pizza {
 
 	static int num = 0;
@@ -8,22 +12,38 @@ public class Pizza {
 	String code;
 	String libelle;
 	double prix;
+	CategoriePizza categorie;
 	
 	// Constructor		
-	public Pizza(int id, String code, String libelle, double prix) {
+	/** Constructeur complet
+	 * @param id
+	 * @param code
+	 * @param libelle
+	 * @param prix
+	 * @param categorie
+	 */
+	public Pizza(int id, String code, String libelle, double prix, CategoriePizza categorie) {
 		super();
 		this.id = id;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+		this.categorie = categorie;
 	}
 	
-	public Pizza(String code, String libelle, double prix) {
+	/** Constructeur
+	 * @param code
+	 * @param libelle
+	 * @param prix
+	 * @param categorie
+	 */
+	public Pizza(String code, String libelle, double prix, CategoriePizza categorie) {
 		super();
 		this.id = num;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
+		this.categorie = categorie;
 
 		num ++;
 	}
@@ -54,6 +74,13 @@ public class Pizza {
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
+	//Categorie
+	public CategoriePizza getCategorie() {
+		return categorie;
+	}
+	public void setPrix(CategoriePizza categorie) {
+		this.categorie = categorie;
+	}
 	//num
 	public static int getNum() {
 		return num;
@@ -62,7 +89,7 @@ public class Pizza {
 	@Override
 	public String toString(){
 		String Affichage = "";
-		Affichage = this.code +" -> "+ this.libelle +"("+this.prix+"€)"; 		
+		Affichage = this.code +" -> "+ this.libelle +" -> "+ this.categorie +"("+this.prix+"€)"; 
 		return Affichage;
 	}		
 }

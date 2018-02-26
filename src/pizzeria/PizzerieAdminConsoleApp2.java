@@ -7,6 +7,10 @@ import model.MenuService;
 import model.MenuServiceFactory;
 import model.PizzaMemDAO;
 
+/**
+ * @author GOBERT Guillaume
+ *
+ */
 public class PizzerieAdminConsoleApp2 {
 
 	public static void main(String[] args) {		
@@ -30,6 +34,9 @@ public class PizzerieAdminConsoleApp2 {
 		choix.close();
 	}
 	
+	/**
+	 * Méthode qui affiche le menu
+	 */
 	public static void gestionMenu(){
 		System.out.println("****** Pizzeria Administration ******");
 		System.out.println("1. Lister les pizzas");
