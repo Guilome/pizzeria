@@ -23,6 +23,9 @@ public class MenuServiceFactory {
 			case 4 :
 				mS = new SupprimerPizzaService();
 				break;
+			case 99 :
+				mS = new FinPizzaService();
+				break;
 		}
 		return mS;
 		

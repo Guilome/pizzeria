@@ -15,18 +15,16 @@ public class PizzerieAdminConsoleApp2 {
 		int choixUtilisateur = 0;		
 		PizzaMemDAO dao = new PizzaMemDAO();	
 		
-		gestionMenu();
-		
 		do{
+			gestionMenu();
 			String choixS = choix.nextLine();
-			choixUtilisateur = Integer.parseInt(choixS);			
+			choixUtilisateur = Integer.parseInt(choixS);	
+			
 			MenuService mS = MenuServiceFactory.getInstance(choixUtilisateur);
 			mS.executeUC(dao);
-			gestionMenu();
+			
 			
 		}while(choixUtilisateur != 99);		
-		
-		System.out.println("Au revoir.");	
 		choix.close();
 	}
 	
