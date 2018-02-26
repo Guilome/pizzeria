@@ -1,5 +1,6 @@
 package model;
 
+//import
 import java.util.ArrayList;
 import java.util.List;
 
@@ -36,6 +37,8 @@ public class PizzaMemDAO implements IPizzaDAO{
 		pizzaModif.setCode(pizza.getCode());
 		pizzaModif.setLibelle(pizza.getLibelle());
 		pizzaModif.setPrix(pizza.getPrix());
+		int index = mesPizzas.indexOf(pizzaModif);
+		mesPizzas.set(index, pizzaModif);
 		
 	}
 
@@ -54,8 +57,8 @@ public class PizzaMemDAO implements IPizzaDAO{
 			if(pizzaList.getCode().equals(codePizza)){	
 				pizza = pizzaList;
 			}
-		}	
-		return null;
+		}
+		return pizza;
 	}
 
 	@Override

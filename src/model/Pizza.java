@@ -59,6 +59,7 @@ public class Pizza {
 		return num;
 	}
 	
+	@Override
 	public String toString(){
 		String Affichage = "";
 		Affichage = this.code +" -> "+ this.libelle +"("+this.prix+"€)"; 		
