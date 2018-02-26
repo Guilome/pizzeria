@@ -7,7 +7,9 @@ public class AjouterPizzaService extends MenuService{
 	@Override
 	public void executeUC(PizzaMemDAO dao) {
 		
-		Scanner sc = new Scanner(System.in);		
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Ajout d'une nouvelle Pizza");
+		System.out.println("");	
 		System.out.println("Veuillez saisir le code :");
 		String codePizza = sc.nextLine();
 		System.out.println("Veuillez saisir le nom (sans espace) :");

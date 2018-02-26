@@ -2,7 +2,10 @@ package pizzeria;
 
 //import
 import java.util.Scanner;
+
+import model.MenuService;
 import model.MenuServiceFactory;
+import model.PizzaMemDAO;
 
 public class PizzerieAdminConsoleApp2 {
 
@@ -10,13 +13,16 @@ public class PizzerieAdminConsoleApp2 {
 
 		Scanner choix = new Scanner(System.in);	
 		int choixUtilisateur = 0;		
+		PizzaMemDAO dao = new PizzaMemDAO();	
 		
 		gestionMenu();
 		
 		do{
 			String choixS = choix.nextLine();
-			choixUtilisateur = Integer.parseInt(choixS);
-			MenuServiceFactory.Menu(choixUtilisateur);
+			choixUtilisateur = Integer.parseInt(choixS);			
+			MenuService mS = MenuServiceFactory.getInstance(choixUtilisateur);
+			mS.executeUC(dao);
+			gestionMenu();
 			
 		}while(choixUtilisateur != 99);		
 		

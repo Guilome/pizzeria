@@ -8,6 +8,8 @@ public class ModifierPizzaService extends MenuService{
 	public void executeUC(PizzaMemDAO dao) {
 		
 		Scanner sc = new Scanner(System.in);
+		System.out.println("Mise à jour d'une pizza");
+		System.out.println("");	
 		System.out.println("Veuillez choisir le code de la pizza à modifier :");
 		String codePizzaModif = sc.nextLine();
 		System.out.println("Veuillez saisir le nouveau code :");

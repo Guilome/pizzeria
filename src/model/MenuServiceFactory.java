@@ -1,44 +1,30 @@
 package model;
 
-import pizzeria.PizzerieAdminConsoleApp2;
+import model.AjouterPizzaService;
+import model.ListerPizzasService;
+import model.SupprimerPizzaService;
+import model.ModifierPizzaService;
 
 public class MenuServiceFactory {
 
-	public static void Menu(int i){
-		
-		PizzaMemDAO dao = new PizzaMemDAO();	
+	public static MenuService getInstance(int i){
+		MenuService mS = null;
 		
 		switch(i){
 			case 1 :
-				ListerPizzasService lPS = new ListerPizzasService();
-				System.out.println("Liste des pizzas");
-				System.out.println("");
-				lPS.executeUC(dao);					
-				PizzerieAdminConsoleApp2.gestionMenu();
+				mS = new ListerPizzasService();
 				break;
-			case 2 :		
-				AjouterPizzaService aPS = new AjouterPizzaService();			
-				System.out.println("Ajout d'une nouvelle Pizza");
-				System.out.println("");					
-				aPS.executeUC(dao);					
-				PizzerieAdminConsoleApp2.gestionMenu();
+			case 2 :
+				mS = new AjouterPizzaService();
 				break;
 			case 3 :
-				ModifierPizzaService mPS = new ModifierPizzaService();
-				System.out.println("Mise à jour d'une pizza");
-				System.out.println("");					
-				mPS.executeUC(dao);					
-				PizzerieAdminConsoleApp2.gestionMenu();
+				mS = new ModifierPizzaService();
 				break;
 			case 4 :
-				SupprimerPizzaService sPS = new SupprimerPizzaService();
-				System.out.println("Suppression d'une pizza");
-				System.out.println("");
-				sPS.executeUC(dao);					
-				PizzerieAdminConsoleApp2.gestionMenu();
-				break;
-			default:
+				mS = new SupprimerPizzaService();
 				break;
 		}
+		return mS;
+		
 	}
 }
