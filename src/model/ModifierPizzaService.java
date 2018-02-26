@@ -29,7 +29,7 @@ public class ModifierPizzaService extends MenuService{
 			System.out.println("Veuillez saisir le nouveau prix :");
 			double nouveauPrix = Double.parseDouble(sc.nextLine());			
 			
-			dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix));
+			dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix, CategoriePizza.VIANDE));
 		}
 		else{
 			throw new UpdatePizzaException("La pizza n'existe pas.");

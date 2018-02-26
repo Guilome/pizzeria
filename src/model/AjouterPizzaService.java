@@ -33,7 +33,7 @@ public class AjouterPizzaService extends MenuService{
 		}
 		
 		//Creation d'une nouvelle pizza
-		dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza));
+		dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza, CategoriePizza.VIANDE));
 
 	}
 
