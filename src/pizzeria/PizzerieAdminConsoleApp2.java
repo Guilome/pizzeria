@@ -3,68 +3,55 @@ package pizzeria;
 //import
 import java.util.List;
 import java.util.Scanner;
+
+import model.AjouterPizzaService;
+import model.ListerPizzasService;
+import model.ModifierPizzaService;
 import model.Pizza;
 import model.PizzaMemDAO;
+import model.SupprimerPizzaService;
 
 public class PizzerieAdminConsoleApp2 {
 
 	public static void main(String[] args) {
 		
-		PizzaMemDAO dao = new PizzaMemDAO();		
-		List<Pizza> mesPizzas = dao.findAllPizzas();
+		PizzaMemDAO dao = new PizzaMemDAO();	
+		Scanner choix = new Scanner(System.in);	
+		int choixUtilisateur = 0;
+		ListerPizzasService lPS = new ListerPizzasService();
+		AjouterPizzaService aPS = new AjouterPizzaService();
+		ModifierPizzaService mPS = new ModifierPizzaService();
+		SupprimerPizzaService sPS = new SupprimerPizzaService();
+		
 		
 		gestionMenu();
 		
-		Scanner choix = new Scanner(System.in);	
-		int choixUtilisateur = 0;
-		
 		do{
-			String choixS = choix.next();
+			String choixS = choix.nextLine();
 			choixUtilisateur = Integer.parseInt(choixS);
 			switch(choixUtilisateur){
 				case 1 :
 					System.out.println("Liste des pizzas");
-					for (Pizza pizza: mesPizzas) {
-						System.out.println(pizza);
-					}
-					System.out.println();
+					System.out.println("");
+					lPS.executeUC(dao);					
 					gestionMenu();
 				break;
 				case 2 :					
 					System.out.println("Ajout d'une nouvelle Pizza");
-					System.out.println("Veuillez saisir le code :");
-					String codePizza = choix.next();
-					System.out.println("Veuillez saisir le nom (sans espace) :");
-					String nomPizza = choix.next();
-					System.out.println("Veuillez saisir le prix :");
-					double prixPizza = Double.parseDouble(choix.next());
-					//Creation d'une nouvelle pizza
-					dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza));
+					System.out.println("");					
+					aPS.executeUC(dao);					
 					gestionMenu();
 				break;
 				case 3 :
 					System.out.println("Mise à jour d'une pizza");
-					System.out.println("Veuillez choisir le code de la pizza à modifier :");
-					String codePizzaModif = choix.next();
-					System.out.println("");
-					System.out.println("Veuillez saisir le nouveau code :");
-					String nouveauCode = choix.next();
-					System.out.println("Veuillez saisir le nouveau nom (sans espace) :");
-					String nouveauNom = choix.next();
-					System.out.println("Veuillez saisir le nouveau prix :");
-					double nouveauPrix = Double.parseDouble(choix.next());	
-					
-					dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix));
-					
+					System.out.println("");					
+					mPS.executeUC(dao);					
 					gestionMenu();
 				break;
 				case 4 :
 					System.out.println("Suppression d'une pizza");
-					System.out.println("Veuillez choisir le code de la pizza à supprimer :");
-					String codePizzaSup = choix.next();	
-					
-					dao.deletePizza(codePizzaSup);
-					
+					System.out.println("");
+					sPS.executeUC(dao);					
 					gestionMenu();
 				break;
 				default:

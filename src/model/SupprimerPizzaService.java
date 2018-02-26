@@ -7,13 +7,11 @@ public class SupprimerPizzaService extends MenuService{
 	@Override
 	public void executeUC(PizzaMemDAO dao) {
 
-		Scanner choix = new Scanner(System.in);		
+		Scanner sc = new Scanner(System.in);		
 		System.out.println("Veuillez choisir le code de la pizza à supprimer :");
-		String codePizzaSup = choix.next();	
+		String codePizzaSup = sc.nextLine();	
 		
-		dao.deletePizza(codePizzaSup);
-		choix.close();
-		
+		dao.deletePizza(codePizzaSup);		
 	}
 
 }
