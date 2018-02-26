@@ -2,7 +2,6 @@ package pizzeria;
 
 //import
 import java.util.Scanner;
-
 import exception.StockageException;
 import model.MenuService;
 import model.MenuServiceFactory;
@@ -26,8 +25,7 @@ public class PizzerieAdminConsoleApp2 {
 				mS.executeUC(dao);
 			} catch (StockageException e) {
 				System.err.println(e.getMessage());
-			}
-			
+			}			
 			
 		}while(choixUtilisateur != 99);		
 		choix.close();

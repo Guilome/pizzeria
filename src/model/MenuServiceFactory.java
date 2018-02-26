@@ -1,5 +1,6 @@
 package model;
 
+//import
 import exception.StockageException;
 import model.AjouterPizzaService;
 import model.ListerPizzasService;
@@ -8,6 +9,12 @@ import model.ModifierPizzaService;
 
 public class MenuServiceFactory {
 
+	/** Retourne une instance d'une classe fille de MenuService
+	 * @param i
+	 * @return
+	 * @throws StockageException
+	 * Si l'imput ne correspond pas aux choix disponible renvoie une erreur
+	 */
 	public static MenuService getInstance(int i) throws StockageException{
 		MenuService mS = null;
 		
