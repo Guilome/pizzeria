@@ -20,7 +20,7 @@ public class SupprimerPizzaService extends MenuService{
 		System.out.println("Suppression d'une pizza");
 		System.out.println("");
 		System.out.println("Veuillez choisir le code de la pizza à supprimer :");	
-		codePizzaSup = sc.nextLine();	
+		codePizzaSup = sc.nextLine().toUpperCase();	
 		if(dao.pizzaExists(codePizzaSup)){	
 			
 			dao.deletePizza(codePizzaSup);	

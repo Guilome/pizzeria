@@ -1,5 +1,9 @@
 package model;
 
+//import
+import java.lang.reflect.Field;
+import utils.*;
+
 /**
  * @author GOBERT Guillaume
  * Classe Pizza
@@ -11,13 +15,24 @@ public class Pizza {
 	/** id : int */
 	int id;
 	/** code : String */
+	@ToString
 	String code;
 	/** libelle : String */
+	@ToString (separateur="=>", UpperCase=true)
 	String libelle;
 	/** prix : double */
+	@ToString (separateur="=>")
 	double prix;
 	/** categorie : CategoriePizza */
+	@ToString
 	CategoriePizza categorie;
+	
+	/** Constructeur vide
+	 * 
+	 */
+	public Pizza(){
+		
+	}
 		
 	/** Constructeur complet
 	 * @param id
@@ -131,8 +146,7 @@ public class Pizza {
 
 	@Override
 	public String toString(){
-		String Affichage = "";
-		Affichage = this.code +" -> "+ this.libelle +" -> "+ this.categorie.getCategorie() +"("+this.prix+"€)"; 
-		return Affichage;
-	}		
+		Pizza p = null;
+		return StringUtils.AffichagePizza(p);		
+	}
 }
