@@ -28,7 +28,6 @@
     	<groupId>com.lowagie</groupId>
     	<artifactId>itext</artifactId>
     	<version>4.2.2</version>
-    	<type>pom</type>
 	</dependency>
   </dependencies>
 </project>

@@ -2,7 +2,6 @@ package pizzeria;
 
 //import
 import java.util.Scanner;
-
 import Interface.IPizzaDAO;
 import exception.StockageException;
 import model.MenuService;
@@ -45,6 +44,7 @@ public class PizzerieAdminConsoleApp2 {
 		System.out.println("2. Ajouter une nouvelle Pizza");
 		System.out.println("3. Mettre à jour une pizza");
 		System.out.println("4. Supprimer une pizza");
+		System.out.println("5. Enregister le menu en pdf.");
 		System.out.println("99. Sortir");
 	}
 	
