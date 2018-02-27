@@ -20,19 +20,19 @@ public class StringUtils{
 		Object o;
 		
 		try {
-			Field[] fields = object.getClass().getDeclaredFields();
+			Field[] fields = Pizza.class.getDeclaredFields();
 			for(Field f : fields){
 				f.setAccessible(true);
 				if(f.isAnnotationPresent(ToString.class)){
 					ToString a = f.getAnnotation(ToString.class);
-					if(a.UpperCase() == true && a.separateur() != ""){
-						o = f.get(object).toString().toUpperCase() + " " + a.separateur()+ " " ;					
+					if(a.UpperCase() == true && a.separateur1() != ""){
+						o =  a.separateur1()+ f.get(object).toString().toUpperCase() + " ";					
 					}
-					else if(a.separateur() != ""){
-						o = f.get(object) + " " + a.separateur()+ " " ;							
+					else if(a.separateur1() != "" &&  a.separateur2() != ""){
+						o =  a.separateur1()+ f.get(object) + " " + a.separateur2() + " ";							
 					}
-					else if(a.UpperCase() == true){
-						o = f.get(object).toString().toUpperCase();					
+					else if(a.LowerCase() == true && a.separateur1() != ""){
+						o =  a.separateur1()+ f.get(object).toString().toLowerCase() + " ";					
 					}
 					else{
 						o = f.get(object);

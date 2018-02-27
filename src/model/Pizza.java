@@ -18,13 +18,13 @@ public class Pizza {
 	@ToString
 	String code;
 	/** libelle : String */
-	@ToString (separateur="=>", UpperCase=true)
+	@ToString (separateur1="=>", UpperCase=true)
 	String libelle;
 	/** prix : double */
-	@ToString (separateur="=>")
+	@ToString (separateur1="(", separateur2="€)")
 	double prix;
 	/** categorie : CategoriePizza */
-	@ToString
+	@ToString (LowerCase = true, separateur1 ="=>")
 	CategoriePizza categorie;
 	
 	/** Constructeur vide
@@ -146,7 +146,7 @@ public class Pizza {
 
 	@Override
 	public String toString(){
-		Pizza p = null;
-		return StringUtils.AffichagePizza(p);		
+		
+		return StringUtils.AffichagePizza(this);		
 	}
 }

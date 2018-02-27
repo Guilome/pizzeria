@@ -2,6 +2,8 @@ package pizzeria;
 
 //import
 import java.util.Scanner;
+
+import Interface.IPizzaDAO;
 import exception.StockageException;
 import model.MenuService;
 import model.MenuServiceFactory;
@@ -17,7 +19,7 @@ public class PizzerieAdminConsoleApp2 {
 
 		Scanner choix = new Scanner(System.in);	
 		int choixUtilisateur = 0;		
-		PizzaMemDAO dao = new PizzaMemDAO();	
+		IPizzaDAO dao = new PizzaMemDAO();	
 		
 		do{					
 			try {			

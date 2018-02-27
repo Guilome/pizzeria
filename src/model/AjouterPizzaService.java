@@ -2,6 +2,8 @@ package model;
 
 //import
 import java.util.Scanner;
+
+import Interface.IPizzaDAO;
 import exception.SavePizzaException;
 
 /**
@@ -11,7 +13,7 @@ import exception.SavePizzaException;
 public class AjouterPizzaService extends MenuService{
 
 	@Override
-	public void executeUC(PizzaMemDAO dao) throws SavePizzaException{
+	public void executeUC(IPizzaDAO dao) throws SavePizzaException{
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.println("Ajout d'une nouvelle Pizza");

@@ -2,6 +2,8 @@ package model;
 
 import java.util.List;
 
+import Interface.IPizzaDAO;
+
 /**
  * @author GOBERT Guillaume
  *
@@ -9,7 +11,7 @@ import java.util.List;
 public class ListerPizzasService extends MenuService{
 
 	@Override
-	public void executeUC(PizzaMemDAO dao) {
+	public void executeUC(IPizzaDAO dao) {
 		System.out.println("Liste des pizzas");
 		System.out.println("");
 		List<Pizza> pizzas =  dao.findAllPizzas();

@@ -2,6 +2,8 @@ package model;
 
 //import
 import java.util.Scanner;
+
+import Interface.IPizzaDAO;
 import exception.DeletePizzaException;
 
 /**
@@ -11,7 +13,7 @@ import exception.DeletePizzaException;
 public class SupprimerPizzaService extends MenuService{
 
 	@Override
-	public void executeUC(PizzaMemDAO dao) throws DeletePizzaException {
+	public void executeUC(IPizzaDAO dao) throws DeletePizzaException {
 
 		Scanner sc = new Scanner(System.in);
 		String codePizzaSup = null;

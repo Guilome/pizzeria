@@ -3,6 +3,7 @@ package model;
 //import
 import java.util.Scanner;
 
+import Interface.IPizzaDAO;
 import exception.SavePizzaException;
 import exception.UpdatePizzaException;
 
@@ -13,7 +14,7 @@ import exception.UpdatePizzaException;
 public class ModifierPizzaService extends MenuService{
 
 	@Override
-	public void executeUC(PizzaMemDAO dao) throws UpdatePizzaException{
+	public void executeUC(IPizzaDAO dao) throws UpdatePizzaException{
 		
 		Scanner sc = new Scanner(System.in);
 		String codePizzaModif = null;

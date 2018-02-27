@@ -14,16 +14,20 @@ import java.lang.annotation.Target;
  *
  */
 public @interface ToString {
-	/** Permet d'ajouter un séparateur entre attribut
-	 * @return
+	/** 
+	 * Permet d'ajouter un séparateur entre attribut
 	 */
-	String separateur() default "";
-	/** Permet de savoir si l'attribut doit être en capital
-	 * @return
+	String separateur1() default "";
+	/** 
+	 * Permet d'ajouter un deuxieme séparateur entre attribut
+	 */
+	String separateur2() default "";
+	/** 
+	 * Permet de savoir si l'attribut doit être en capital
 	 */
 	boolean UpperCase() default false;
-	/**Permet de savoir doit être en miniscule
-	 * @return
+	/**
+	 * Permet de savoir doit être en miniscule
 	 */
 	boolean LowerCase() default false;
 }
