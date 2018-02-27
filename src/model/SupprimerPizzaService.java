@@ -8,7 +8,7 @@ import exception.DeletePizzaException;
 
 /**
  * @author GOBERT Guillaume
- *
+ * Service qui permet de supprimer la pizza
  */
 public class SupprimerPizzaService extends MenuService{
 
@@ -22,7 +22,7 @@ public class SupprimerPizzaService extends MenuService{
 		System.out.println("Suppression d'une pizza");
 		System.out.println("");
 		System.out.println("Veuillez choisir le code de la pizza à supprimer :");	
-		codePizzaSup = sc.nextLine().toUpperCase();	
+		codePizzaSup = sc.nextLine().toUpperCase().trim();	
 		if(dao.pizzaExists(codePizzaSup)){	
 			
 			dao.deletePizza(codePizzaSup);	

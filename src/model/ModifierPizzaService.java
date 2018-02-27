@@ -9,7 +9,7 @@ import exception.UpdatePizzaException;
 
 /**
  * @author GOBERT Guillaume
- *
+ * Service qui permet de modifier une pizza
  */
 public class ModifierPizzaService extends MenuService{
 
@@ -26,9 +26,9 @@ public class ModifierPizzaService extends MenuService{
 		if(dao.pizzaExists(codePizzaModif)){
 			
 			System.out.println("Veuillez saisir le nouveau code :");
-			String nouveauCode = sc.nextLine().toUpperCase();
+			String nouveauCode = sc.nextLine().toUpperCase().trim();
 			System.out.println("Veuillez saisir le nouveau nom (sans espace) :");
-			String nouveauNom = sc.nextLine();
+			String nouveauNom = sc.nextLine().trim();
 			System.out.println("Veuillez saisir la catégorie :");
 			String categorieString = sc.nextLine().toUpperCase().trim();
 			categorieString = categorieString.replaceFirst(" ", "_");
@@ -43,7 +43,7 @@ public class ModifierPizzaService extends MenuService{
 			}
 			CategoriePizza nouvelleCategorie = CategoriePizza.valueOf(categorieString);	
 			System.out.println("Veuillez saisir le nouveau prix :");
-			double nouveauPrix = Double.parseDouble(sc.nextLine());			
+			double nouveauPrix = Double.parseDouble(sc.nextLine().trim());			
 			
 			dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix, nouvelleCategorie));
 		}

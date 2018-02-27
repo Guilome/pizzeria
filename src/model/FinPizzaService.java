@@ -2,6 +2,10 @@ package model;
 
 import Interface.IPizzaDAO;
 
+/**
+ * @author GOBERT Guillaume
+ *Service qui renvoie un message de fin d'application
+ */
 public class FinPizzaService extends MenuService{
 
 	@Override

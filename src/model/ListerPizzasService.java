@@ -6,7 +6,7 @@ import Interface.IPizzaDAO;
 
 /**
  * @author GOBERT Guillaume
- *
+ * Service qui renvoie une liste de pizza
  */
 public class ListerPizzasService extends MenuService{
 

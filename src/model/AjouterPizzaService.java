@@ -8,7 +8,7 @@ import exception.SavePizzaException;
 
 /**
  * @author GOBERT Guillaume
- *
+ * Service qui ajoute une pizza
  */
 public class AjouterPizzaService extends MenuService{
 
@@ -19,12 +19,12 @@ public class AjouterPizzaService extends MenuService{
 		System.out.println("Ajout d'une nouvelle Pizza");
 		System.out.println("");	
 		System.out.println("Veuillez saisir le code :");
-		String codePizza = sc.nextLine().toUpperCase();
+		String codePizza = sc.nextLine().toUpperCase().trim();
 		if(codePizza.isEmpty() || codePizza.equals(" ")){
 			throw new SavePizzaException("Le code est incorrect.");
 		}
 		System.out.println("Veuillez saisir le nom (sans espace) :");
-		String nomPizza = sc.nextLine();
+		String nomPizza = sc.nextLine().trim();
 		if(nomPizza.isEmpty()|| nomPizza.equals(" ")){
 			throw new SavePizzaException("Le libellé est incorrect.");
 		}
@@ -42,7 +42,7 @@ public class AjouterPizzaService extends MenuService{
 		}
 		CategoriePizza categoriePizza = CategoriePizza.valueOf(categorieString);
 		System.out.println("Veuillez saisir le prix :");
-		double prixPizza = Double.parseDouble(sc.nextLine());
+		double prixPizza = Double.parseDouble(sc.nextLine().trim());
 		if(prixPizza == 0) {
 			throw new SavePizzaException("Le prix est incorrect.");
 		}
