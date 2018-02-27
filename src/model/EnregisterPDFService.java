@@ -20,9 +20,10 @@ public class EnregisterPDFService extends MenuService{
 	 */
 	@Override
 	public void executeUC(IPizzaDAO dao) throws StockageException {
-		System.out.println("Liste des pizzas");
+		System.out.println("Création du PDF");
 		List<Pizza> pizzas =  dao.findAllPizzas();
 		PDFGenerator.creatorPDF(pizzas);
+		System.out.println("Fini.");		
 	}
 
 
