@@ -9,7 +9,7 @@ public class PizzeriaAdminConsoleApp {
 	public static void main(String[] args) {
 		
 		Pizza[] tableauPizza = new Pizza[100];
-		
+		/*
 		Pizza p0 = new Pizza("PEP", "Pépéroni", 12.50);
 		tableauPizza[0] = p0;
 		Pizza p1 = new Pizza("MAR", "Margherita", 14.00);
@@ -26,7 +26,7 @@ public class PizzeriaAdminConsoleApp {
 		tableauPizza[6] = p6;
 		Pizza p7 = new Pizza("IND", "L’indienne", 14.00);
 		tableauPizza[7] = p7;
-					
+		*/			
 		gestionMenu();
 		
 		Scanner choix = new Scanner(System.in);	
@@ -55,7 +55,9 @@ public class PizzeriaAdminConsoleApp {
 					System.out.println("Veuillez saisir le prix :");
 					double prixPizza = Double.parseDouble(choix.next());
 					//Creation d'une nouvelle pizza
+					/*
 					tableauPizza[Pizza.getNum()] =  new Pizza(codePizza, nomPizza, prixPizza);
+					*/
 					gestionMenu();
 				break;
 				case 3 :

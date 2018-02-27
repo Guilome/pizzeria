@@ -16,12 +16,12 @@ public class PizzaMemDAO implements IPizzaDAO{
 	
 	public PizzaMemDAO() {
 		mesPizzas.add(new Pizza("PEP", "Pépéroni", 12.50, CategoriePizza.VIANDE));
-		mesPizzas.add(new Pizza("MAR", "Margherita", 14.00, CategoriePizza.VIANDE));
+		mesPizzas.add(new Pizza("MAR", "Margherita", 14.00, CategoriePizza.SANS_VIANDE));
 		mesPizzas.add(new Pizza("REIN", "La Reine", 11.50, CategoriePizza.VIANDE));
-		mesPizzas.add(new Pizza("FRO", "La 4 fromages", 12.00, CategoriePizza.VIANDE));
+		mesPizzas.add(new Pizza("FRO", "La 4 fromages", 12.00, CategoriePizza.SANS_VIANDE));
 		mesPizzas.add(new Pizza("CAN", "La cannibale", 12.50, CategoriePizza.VIANDE));
 		mesPizzas.add(new Pizza("SAV", "La savoyarde", 13.00, CategoriePizza.VIANDE));
-		mesPizzas.add(new Pizza("ORI", "L’orientale", 13.50, CategoriePizza.VIANDE));
+		mesPizzas.add(new Pizza("ORI", "L’orientale", 13.50, CategoriePizza.SANS_VIANDE));
 		mesPizzas.add(new Pizza("IND", "L’indienne", 14.00, CategoriePizza.VIANDE));
 	}
 	
@@ -41,6 +41,7 @@ public class PizzaMemDAO implements IPizzaDAO{
 		pizzaModif.setCode(pizza.getCode());
 		pizzaModif.setLibelle(pizza.getLibelle());
 		pizzaModif.setPrix(pizza.getPrix());
+		pizzaModif.setCategorie(pizza.getCategorie());
 		int index = mesPizzas.indexOf(pizzaModif);
 		mesPizzas.set(index, pizzaModif);		
 	}

@@ -26,6 +26,18 @@ public class AjouterPizzaService extends MenuService{
 		if(nomPizza.isEmpty()|| nomPizza.equals(" ")){
 			throw new SavePizzaException("Le libellé est incorrect.");
 		}
+		System.out.println("Veuillez saisir la catégorie :");
+		String categorieString = sc.nextLine().toUpperCase();
+		CategoriePizza categoriePizza = CategoriePizza.valueOf(categorieString);
+		boolean categorieExist = false;
+		for(CategoriePizza c: CategoriePizza.values()){
+			if(categoriePizza.equals(c)){
+				categorieExist = true;
+			}
+		}
+		if(!categorieExist){
+			throw new SavePizzaException("La categorie est incorrect.");
+		}
 		System.out.println("Veuillez saisir le prix :");
 		double prixPizza = Double.parseDouble(sc.nextLine());
 		if(prixPizza == 0) {
@@ -33,7 +45,7 @@ public class AjouterPizzaService extends MenuService{
 		}
 		
 		//Creation d'une nouvelle pizza
-		dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza, CategoriePizza.VIANDE));
+		dao.saveNewPizza(new Pizza(codePizza, nomPizza, prixPizza, categoriePizza));
 
 	}
 

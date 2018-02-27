@@ -2,6 +2,8 @@ package model;
 
 //import
 import java.util.Scanner;
+
+import exception.SavePizzaException;
 import exception.UpdatePizzaException;
 
 /**
@@ -26,10 +28,22 @@ public class ModifierPizzaService extends MenuService{
 			String nouveauCode = sc.nextLine();
 			System.out.println("Veuillez saisir le nouveau nom (sans espace) :");
 			String nouveauNom = sc.nextLine();
+			System.out.println("Veuillez saisir la catégorie :");
+			String categorieString = sc.nextLine().toUpperCase();
+			CategoriePizza nouvelleCategorie = CategoriePizza.valueOf(categorieString);
+			boolean categorieExist = false;
+			for(CategoriePizza c: CategoriePizza.values()){
+				if(nouvelleCategorie.equals(c)){
+					categorieExist = true;
+				}
+			}
+			if(!categorieExist){
+				throw new UpdatePizzaException("La categorie est incorrect.");
+			}
 			System.out.println("Veuillez saisir le nouveau prix :");
 			double nouveauPrix = Double.parseDouble(sc.nextLine());			
 			
-			dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix, CategoriePizza.VIANDE));
+			dao.updatePizza(codePizzaModif, new Pizza(nouveauCode, nouveauNom, nouveauPrix, nouvelleCategorie));
 		}
 		else{
 			throw new UpdatePizzaException("La pizza n'existe pas.");

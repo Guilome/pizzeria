@@ -8,13 +8,17 @@ public class Pizza {
 
 	static int num = 0;
 	//Attributes
+	/** id : int */
 	int id;
+	/** code : String */
 	String code;
+	/** libelle : String */
 	String libelle;
+	/** prix : double */
 	double prix;
+	/** categorie : CategoriePizza */
 	CategoriePizza categorie;
-	
-	// Constructor		
+		
 	/** Constructeur complet
 	 * @param id
 	 * @param code
@@ -47,49 +51,88 @@ public class Pizza {
 
 		num ++;
 	}
-
-	// Getter Setter
-	//Id
+	
+	/** Getter
+	 * @return the id
+	 */
 	public int getId() {
 		return id;
 	}
-	//Code
+
+	/** Setter
+	 * @param id the id to set
+	 */
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	/** Getter
+	 * @return the code
+	 */
 	public String getCode() {
 		return code;
 	}
+
+	/** Setter
+	 * @param code the code to set
+	 */
 	public void setCode(String code) {
 		this.code = code;
 	}
-	//Libelle
+
+	/** Getter
+	 * @return the libelle
+	 */
 	public String getLibelle() {
 		return libelle;
 	}
+
+	/** Setter
+	 * @param libelle the libelle to set
+	 */
 	public void setLibelle(String libelle) {
 		this.libelle = libelle;
 	}
-	//Prix
+
+	/** Getter
+	 * @return the prix
+	 */
 	public double getPrix() {
 		return prix;
 	}
+
+	/** Setter
+	 * @param prix the prix to set
+	 */
 	public void setPrix(double prix) {
 		this.prix = prix;
 	}
-	//Categorie
+
+	/** Getter
+	 * @return the categorie
+	 */
 	public CategoriePizza getCategorie() {
 		return categorie;
 	}
-	public void setPrix(CategoriePizza categorie) {
+
+	/** Setter
+	 * @param categorie the categorie to set
+	 */
+	public void setCategorie(CategoriePizza categorie) {
 		this.categorie = categorie;
 	}
-	//num 
+
+	/** Getter
+	 * @return the num
+	 */
 	public static int getNum() {
 		return num;
 	}
-	
+
 	@Override
 	public String toString(){
 		String Affichage = "";
-		Affichage = this.code +" -> "+ this.libelle +" -> "+ this.categorie +"("+this.prix+"€)"; 
+		Affichage = this.code +" -> "+ this.libelle +" -> "+ this.categorie.getCategorie() +"("+this.prix+"€)"; 
 		return Affichage;
 	}		
 }

@@ -19,7 +19,7 @@ public enum CategoriePizza {
 	}
 	
 	/** 
-	 * @return Retourne la valeur de la categorie
+	 * @return Retourne une categorie
 	 */
 	public String getCategorie() {
 		return this.categorie;
