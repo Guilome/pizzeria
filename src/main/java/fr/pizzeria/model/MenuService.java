@@ -1,7 +1,7 @@
-package model;
+package fr.pizzeria.model;
 
-import Interface.IPizzaDAO;
-import exception.StockageException;
+import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.exception.StockageException;
 
 /**
  * @author GOBERT Guillaume

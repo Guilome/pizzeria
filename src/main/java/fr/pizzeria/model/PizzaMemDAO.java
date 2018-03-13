@@ -1,10 +1,10 @@
-package model;
+package fr.pizzeria.model;
 
 //import
 import java.util.ArrayList;
 import java.util.List;
 
-import Interface.IPizzaDAO;
+import fr.pizzeria.Interface.IPizzaDAO;
 
 /**
  * @author GOBERT Guillaume

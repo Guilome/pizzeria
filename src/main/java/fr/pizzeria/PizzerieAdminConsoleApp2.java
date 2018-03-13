@@ -1,12 +1,12 @@
-package pizzeria;
+package fr.pizzeria;
 
 //import
 import java.util.Scanner;
-import Interface.IPizzaDAO;
-import exception.StockageException;
-import model.MenuService;
-import model.MenuServiceFactory;
-import model.PizzaMemDAO;
+import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.exception.StockageException;
+import fr.pizzeria.model.MenuService;
+import fr.pizzeria.model.MenuServiceFactory;
+import fr.pizzeria.model.PizzaMemDAO;
 
 /**
  * @author GOBERT Guillaume

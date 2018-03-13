@@ -1,8 +1,8 @@
-package pizzeria;
+package fr.pizzeria;
 
 //import
 import java.util.Scanner;
-import model.Pizza;
+import fr.pizzeria.model.Pizza;
 
 public class PizzeriaAdminConsoleApp {
 

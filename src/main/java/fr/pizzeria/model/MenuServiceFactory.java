@@ -1,10 +1,10 @@
-package model;
+package fr.pizzeria.model;
 
-import exception.StockageException;
-import model.AjouterPizzaService;
-import model.ListerPizzasService;
-import model.SupprimerPizzaService;
-import model.ModifierPizzaService;
+import fr.pizzeria.exception.StockageException;
+import fr.pizzeria.model.AjouterPizzaService;
+import fr.pizzeria.model.ListerPizzasService;
+import fr.pizzeria.model.SupprimerPizzaService;
+import fr.pizzeria.model.ModifierPizzaService;
 
 /**
  * @author GOBERT Guillaume

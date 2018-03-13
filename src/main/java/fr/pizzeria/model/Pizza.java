@@ -1,7 +1,7 @@
-package model;
+package fr.pizzeria.model;
 
 //import
-import utils.*;
+import fr.pizzeria.utils.*;
 
 /**
  * @author GOBERT Guillaume

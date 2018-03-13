@@ -1,4 +1,4 @@
-package utils;
+package fr.pizzeria.utils;
 
 //import
 import static java.lang.annotation.ElementType.FIELD;

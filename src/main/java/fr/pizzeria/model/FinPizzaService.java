@@ -1,6 +1,6 @@
-package model;
+package fr.pizzeria.model;
 
-import Interface.IPizzaDAO;
+import fr.pizzeria.Interface.IPizzaDAO;
 
 /**
  * @author GOBERT Guillaume

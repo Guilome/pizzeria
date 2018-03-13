@@ -1,12 +1,12 @@
 /**
  * 
  */
-package model;
+package fr.pizzeria.model;
 
 //import
 import java.util.List;
-import Interface.IPizzaDAO;
-import utils.PDFGenerator;
+import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.utils.PDFGenerator;
 
 /**
  * @author GOBERT Guillaume

@@ -1,10 +1,9 @@
-package model;
+package fr.pizzeria.model;
 
 //import
 import java.util.Scanner;
-
-import Interface.IPizzaDAO;
-import exception.SavePizzaException;
+import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.exception.SavePizzaException;
 
 /**
  * @author GOBERT Guillaume

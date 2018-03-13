@@ -1,8 +1,8 @@
-package Interface;
+package fr.pizzeria.Interface;
 
 //import
 import java.util.List;
-import model.Pizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume

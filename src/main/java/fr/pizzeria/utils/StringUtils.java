@@ -1,11 +1,11 @@
 /**
  * 
  */
-package utils;
+package fr.pizzeria.utils;
 
 //import
 import java.lang.reflect.Field;
-import model.Pizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume

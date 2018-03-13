@@ -1,7 +1,7 @@
 /**
  * 
  */
-package utils;
+package fr.pizzeria.utils;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -12,7 +12,7 @@ import com.itextpdf.text.DocumentException;
 import com.itextpdf.text.Paragraph;
 import com.itextpdf.text.pdf.PdfWriter;
 
-import model.Pizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume

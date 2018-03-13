@@ -1,4 +1,4 @@
-package exception;
+package fr.pizzeria.exception;
 
 /**
  * @author GOBERT Guillaume

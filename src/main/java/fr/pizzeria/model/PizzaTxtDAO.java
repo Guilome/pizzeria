@@ -1,20 +1,15 @@
 /**
  * 
  */
-package model;
+package fr.pizzeria.model;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.IOException;
 //import
+import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-
 import org.apache.commons.io.FileUtils;
-
-import com.itextpdf.text.Paragraph;
-
-import Interface.IPizzaDAO;
+import fr.pizzeria.Interface.IPizzaDAO;
 
 /**
  * @author GOBERT Guillaume

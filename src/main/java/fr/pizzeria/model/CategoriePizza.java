@@ -1,4 +1,4 @@
-package model;
+package fr.pizzeria.model;
 
 /**
  * @author GOBERT Guillaume
