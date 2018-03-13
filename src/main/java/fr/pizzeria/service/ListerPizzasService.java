@@ -1,7 +1,8 @@
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 import java.util.List;
 import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume

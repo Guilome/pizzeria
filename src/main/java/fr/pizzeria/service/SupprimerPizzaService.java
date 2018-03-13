@@ -1,4 +1,4 @@
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 //import
 import java.util.Scanner;

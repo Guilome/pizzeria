@@ -4,9 +4,9 @@ package fr.pizzeria;
 import java.util.Scanner;
 import fr.pizzeria.Interface.IPizzaDAO;
 import fr.pizzeria.exception.StockageException;
-import fr.pizzeria.model.MenuService;
-import fr.pizzeria.model.MenuServiceFactory;
 import fr.pizzeria.model.PizzaMemDAO;
+import fr.pizzeria.service.MenuService;
+import fr.pizzeria.service.MenuServiceFactory;
 
 /**
  * @author GOBERT Guillaume

@@ -1,9 +1,11 @@
-package fr.pizzeria.model;
+package fr.pizzeria.service;
 
 //import
 import java.util.Scanner;
 import fr.pizzeria.Interface.IPizzaDAO;
 import fr.pizzeria.exception.SavePizzaException;
+import fr.pizzeria.model.CategoriePizza;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume
