@@ -1,7 +1,7 @@
 /**
  * 
  */
-package test;
+package service;
 
 //import
 import static org.junit.Assert.*;
@@ -46,11 +46,39 @@ public class AjouterPizzaServiceTest {
 	}
 	
 	@Test (expected = StockageException.class)
-	public void testExecuteUCException() throws StockageException{
+	public void testExecuteUCCode()throws StockageException{
 		IPizzaDAO dao = new PizzaMemDAO();
-		systemInMock.provideLines("NOR","Norvegienne","POISSON","15.00");
+		//Test code vide
+		systemInMock.provideLines("","Norvegienne","POISSON","15.00");
 		MenuService ms = new AjouterPizzaService();
-		
-		ms.executeUC(dao);
+		ms.executeUC(dao);		
+	}	
+	
+	@Test (expected = StockageException.class)
+	public void testExecuteUCLibelle()throws StockageException{
+		IPizzaDAO dao = new PizzaMemDAO();
+		//Test Libellé vide
+		systemInMock.provideLines("NOR","","POISSON","blabla");
+		MenuService ms = new AjouterPizzaService();
+		ms.executeUC(dao);		
+	}	
+	
+	@Test (expected = StockageException.class)
+	public void testExecuteUCCategorie()throws StockageException{
+		IPizzaDAO dao = new PizzaMemDAO();
+		//Test categorie non existante
+		systemInMock.provideLines("NOR","Norvegienne","80","15.00");
+		MenuService ms = new AjouterPizzaService();
+		ms.executeUC(dao);		
 	}
+	
+	@Test (expected = StockageException.class)
+	public void testExecuteUCPrix()throws StockageException{
+		IPizzaDAO dao = new PizzaMemDAO();
+		//Test prix non valide
+		systemInMock.provideLines("NOR","Norvegienne","POISSON","blabla");
+		MenuService ms = new AjouterPizzaService();
+		ms.executeUC(dao);		
+	}	
+	
 }

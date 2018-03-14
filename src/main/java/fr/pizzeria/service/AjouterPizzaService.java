@@ -42,10 +42,15 @@ public class AjouterPizzaService extends MenuService{
 			throw new SavePizzaException("La categorie est incorrect.");
 		}
 		CategoriePizza categoriePizza = CategoriePizza.valueOf(categorieString);
-		System.out.println("Veuillez saisir le prix :");
-		double prixPizza = Double.parseDouble(sc.nextLine().trim());
-		if(prixPizza == 0) {
-			throw new SavePizzaException("Le prix est incorrect.");
+		double prixPizza;
+		try {
+			System.out.println("Veuillez saisir le prix :");
+			prixPizza = Double.parseDouble(sc.nextLine().trim());
+			if(prixPizza == 0) {
+				throw new SavePizzaException("Le prix est incorrect.");
+			}
+		} catch (NumberFormatException e) {
+			throw new SavePizzaException("Le format du prix n'est pas correct");
 		}
 		
 		//Creation d'une nouvelle pizza

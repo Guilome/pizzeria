@@ -17,13 +17,13 @@ public class Pizza {
 	@ToString
 	String code;
 	/** libelle : String */
-	@ToString (separateur1="=>", UpperCase=true)
+	@ToString (separateur1=" => ", UpperCase=true)
 	String libelle;
 	/** prix : double */
-	@ToString (separateur1="(", separateur2="€)")
+	@ToString (separateur1=" (", separateur2="€) ")
 	double prix;
 	/** categorie : CategoriePizza */
-	@ToString (LowerCase = true, separateur1 ="=>")
+	@ToString (LowerCase = true, separateur1 =" => ")
 	CategoriePizza categorie;
 	
 	/** Constructeur vide
