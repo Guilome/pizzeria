@@ -21,7 +21,13 @@ public class ModifierPizzaService extends MenuService{
 		String codePizzaModif = null;
 		
 		System.out.println("Mise à jour d'une pizza");
-		System.out.println("");	
+		System.out.println("");
+		
+		for(Pizza p : dao.findAllPizzas()){
+			System.out.println(p.toString());
+		}
+		
+		System.out.println("");
 		System.out.println("Veuillez choisir le code de la pizza à modifier :");
 		codePizzaModif = sc.nextLine();
 		if(dao.pizzaExists(codePizzaModif)){

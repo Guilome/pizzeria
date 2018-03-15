@@ -4,6 +4,7 @@ package fr.pizzeria.service;
 import java.util.Scanner;
 import fr.pizzeria.Interface.IPizzaDAO;
 import fr.pizzeria.exception.DeletePizzaException;
+import fr.pizzeria.model.Pizza;
 
 /**
  * @author GOBERT Guillaume
@@ -17,8 +18,13 @@ public class SupprimerPizzaService extends MenuService{
 		Scanner sc = new Scanner(System.in);
 		String codePizzaSup = null;
 		
-		
 		System.out.println("Suppression d'une pizza");
+		System.out.println("");
+		
+		for(Pizza p : dao.findAllPizzas()){
+			System.out.println(p.toString());
+		}
+		
 		System.out.println("");
 		System.out.println("Veuillez choisir le code de la pizza à supprimer :");	
 		codePizzaSup = sc.nextLine().toUpperCase().trim();	
