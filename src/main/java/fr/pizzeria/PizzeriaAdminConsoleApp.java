@@ -38,11 +38,11 @@ public class PizzeriaAdminConsoleApp {
 			switch(choixUtilisateur){
 				case 1 :
 					System.out.println("Liste des pizzas");
-					for(int i=0; i < Pizza.getNum(); i++){
+					/*for(int i=0; i < Pizza.getNum(); i++){
 						if(tableauPizza[i].getCode() != ""){
 							System.out.println(tableauPizza[i]);								
 						}
-					}
+					}*/
 					System.out.println();
 					gestionMenu();
 				break;
@@ -72,13 +72,13 @@ public class PizzeriaAdminConsoleApp {
 					System.out.println("Veuillez saisir le nouveau prix :");
 					double nouveauPrix = Double.parseDouble(choix.next());	
 					
-					for(int i = 0; i < Pizza.getNum(); i++){
+					/*for(int i = 0; i < Pizza.getNum(); i++){
 						if(tableauPizza[i].getCode().equals(codePizzaModif)){
 							tableauPizza[i].setCode(nouveauCode);	
 							tableauPizza[i].setLibelle(nouveauNom);	
 							tableauPizza[i].setPrix(nouveauPrix);							
 						}
-					}					
+					}*/			
 					gestionMenu();
 				break;
 				case 4 :
@@ -86,13 +86,13 @@ public class PizzeriaAdminConsoleApp {
 					System.out.println("Veuillez choisir le code de la pizza à supprimer :");
 					String codePizzaSup = choix.next();	
 					
-					for(int i = 0; i < Pizza.getNum(); i++){
+					/*for(int i = 0; i < Pizza.getNum(); i++){
 						if(tableauPizza[i].getCode().equals(codePizzaSup)){
 							tableauPizza[i].setCode("");	
 							tableauPizza[i].setLibelle("");	
 							tableauPizza[i].setPrix(0.00);		
 						}
-					}
+					}*/
 					gestionMenu();
 				break;
 				default:

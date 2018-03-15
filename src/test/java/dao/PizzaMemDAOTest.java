@@ -5,9 +5,9 @@ import static org.junit.Assert.*;
 import java.util.List;
 import org.junit.Test;
 import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.dao.PizzaMemDAO;
 import fr.pizzeria.model.CategoriePizza;
 import fr.pizzeria.model.Pizza;
-import fr.pizzeria.model.PizzaMemDAO;
 
 /**
  * @author ETY0004
@@ -16,7 +16,7 @@ import fr.pizzeria.model.PizzaMemDAO;
 public class PizzaMemDAOTest {
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#findAllPizzas()}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#findAllPizzas()}.
 	 */
 	@Test
 	public void testFindAllPizzas(){
@@ -26,7 +26,7 @@ public class PizzaMemDAOTest {
 	}
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#saveNewPizza(fr.pizzeria.model.Pizza)}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#saveNewPizza(fr.pizzeria.model.Pizza)}.
 	 */
 	@Test
 	public void testSaveNewPizza() {
@@ -37,7 +37,7 @@ public class PizzaMemDAOTest {
 	}
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#updatePizza(java.lang.String, fr.pizzeria.model.Pizza)}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#updatePizza(java.lang.String, fr.pizzeria.model.Pizza)}.
 	 */
 	@Test
 	public void testUpdatePizza() {
@@ -53,7 +53,7 @@ public class PizzaMemDAOTest {
 	}
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#deletePizza(java.lang.String)}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#deletePizza(java.lang.String)}.
 	 */
 	@Test
 	public void testDeletePizza() {
@@ -63,7 +63,7 @@ public class PizzaMemDAOTest {
 	}
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#findPizzaByCode(java.lang.String)}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#findPizzaByCode(java.lang.String)}.
 	 */
 	@Test
 	public void testFindPizzaByCode() {
@@ -72,7 +72,7 @@ public class PizzaMemDAOTest {
 	}
 
 	/**
-	 * Test method for {@link fr.pizzeria.model.PizzaMemDAO#pizzaExists(java.lang.String)}.
+	 * Test method for {@link fr.pizzeria.dao.PizzaMemDAO#pizzaExists(java.lang.String)}.
 	 */
 	@Test
 	public void testPizzaExists() {

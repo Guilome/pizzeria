@@ -6,8 +6,9 @@ import java.util.Scanner;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.dao.PizzaBaseDAO;
+import fr.pizzeria.dao.PizzaMemDAO;
 import fr.pizzeria.exception.StockageException;
-import fr.pizzeria.model.PizzaMemDAO;
 import fr.pizzeria.service.MenuService;
 import fr.pizzeria.service.MenuServiceFactory;
 
@@ -23,7 +24,7 @@ public class PizzerieAdminConsoleApp2 {
 
 		Scanner choix = new Scanner(System.in);	
 		int choixUtilisateur = 0;		
-		IPizzaDAO dao = new PizzaMemDAO();	
+		IPizzaDAO dao = new PizzaBaseDAO();	
 		
 		do{					
 			try {			
@@ -34,7 +35,7 @@ public class PizzerieAdminConsoleApp2 {
 				mS.executeUC(dao);
 			} 
 			catch (StockageException e) {
-				System.err.println(e.getMessage());
+				log.error(e.getMessage());
 			}					
 		}while(choixUtilisateur != 99);		
 		choix.close();
@@ -49,7 +50,7 @@ public class PizzerieAdminConsoleApp2 {
 		System.out.println("2. Ajouter une nouvelle Pizza");
 		System.out.println("3. Mettre à jour une pizza");
 		System.out.println("4. Supprimer une pizza");
-		System.out.println("5. Enregister le menu en pdf.");
+		System.out.println("5. Enregister le menu dans la base donnée.");
 		System.out.println("99. Sortir");
 	}
 	

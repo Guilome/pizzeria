@@ -17,7 +17,7 @@ public class ListerPizzasService extends MenuService{
 		System.out.println("");
 		List<Pizza> pizzas =  dao.findAllPizzas();
 		if (pizzas == null) {
-			throw new StockageException("La liste des pizzaas est nul");
+			throw new StockageException("La liste des pizzas est nul");
 		}
 		for (Pizza pizza: pizzas) {
 			System.out.println(pizza);

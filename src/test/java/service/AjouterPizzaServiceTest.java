@@ -10,9 +10,9 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.contrib.java.lang.system.TextFromStandardInputStream;
 import fr.pizzeria.Interface.IPizzaDAO;
+import fr.pizzeria.dao.PizzaMemDAO;
 import fr.pizzeria.exception.StockageException;
 import fr.pizzeria.model.CategoriePizza;
-import fr.pizzeria.model.PizzaMemDAO;
 import fr.pizzeria.service.AjouterPizzaService;
 import fr.pizzeria.service.MenuService;
 

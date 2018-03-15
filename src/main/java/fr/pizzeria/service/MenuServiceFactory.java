@@ -35,7 +35,7 @@ public class MenuServiceFactory {
 				mS = new SupprimerPizzaService();
 				break;
 			case 5 :
-				mS = new EnregisterPDFService();
+				mS = new EnregistrerBaseService();
 				break;
 			case 99 :
 				mS = new FinPizzaService();

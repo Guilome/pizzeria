@@ -9,7 +9,6 @@ import fr.pizzeria.utils.*;
  */
 public class Pizza {
 
-	static int num = 0;
 	//Attributes
 	/** id : int */
 	int id;
@@ -57,13 +56,10 @@ public class Pizza {
 	 */
 	public Pizza(String code, String libelle, double prix, CategoriePizza categorie) {
 		super();
-		this.id = num;
 		this.code = code;
 		this.libelle = libelle;
 		this.prix = prix;
 		this.categorie = categorie;
-
-		num ++;
 	}
 	
 	/** Getter
@@ -136,12 +132,6 @@ public class Pizza {
 		this.categorie = categorie;
 	}
 
-	/** Getter
-	 * @return the num
-	 */
-	public static int getNum() {
-		return num;
-	}
 
 	@Override
 	public String toString(){
