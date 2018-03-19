@@ -1,5 +1,15 @@
 package fr.pizzeria.model;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 //import
 import fr.pizzeria.utils.*;
 
@@ -7,23 +17,32 @@ import fr.pizzeria.utils.*;
  * @author GOBERT Guillaume
  * Classe Pizza
  */
+@Entity
+@Table(name = "pizza")
 public class Pizza {
 
 	//Attributes
 	/** id : int */
-	int id;
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	private Integer id;
 	/** code : String */
 	@ToString
-	String code;
+	@Column(name = "code", length = 4, nullable = false)
+	private String code;
 	/** libelle : String */
 	@ToString (separateur1=" => ", UpperCase=true)
-	String libelle;
+	@Column(name = "libelle", length = 50, nullable = false)
+	private String libelle;
 	/** prix : double */
 	@ToString (separateur1=" (", separateur2="€) ")
-	double prix;
+	@Column(name = "prix", nullable = false)
+	private Double prix;
 	/** categorie : CategoriePizza */
 	@ToString (LowerCase = true, separateur1 =" => ")
-	CategoriePizza categorie;
+	@Column(name = "categorie", nullable = false)
+	@Enumerated(EnumType.STRING)
+	private CategoriePizza categorie;
 	
 	/** Constructeur vide
 	 * 

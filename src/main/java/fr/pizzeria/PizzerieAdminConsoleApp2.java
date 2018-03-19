@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import fr.pizzeria.Interface.IPizzaDAO;
 import fr.pizzeria.dao.PizzaBaseDAO;
+import fr.pizzeria.dao.PizzaJpaDAO;
 import fr.pizzeria.dao.PizzaMemDAO;
 import fr.pizzeria.exception.StockageException;
 import fr.pizzeria.service.MenuService;
@@ -24,7 +25,7 @@ public class PizzerieAdminConsoleApp2 {
 
 		Scanner choix = new Scanner(System.in);	
 		int choixUtilisateur = 0;		
-		IPizzaDAO dao = new PizzaBaseDAO();	
+		IPizzaDAO dao = new PizzaJpaDAO();	
 		
 		do{					
 			try {			
